@@ -1,6 +1,6 @@
 <template>
     <div class="father">
-        <MittChild />
+        <MittOne />
         <br />
         <MittTwo />
     </div>

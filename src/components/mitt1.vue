@@ -1,14 +1,17 @@
 <template>
-  <div>同层组件</div>
+  <div>同层组件{{count}}</div>
+  <button @click="handleClick">点我加一</button>
 </template>
 
 <script setup lang='ts'>
-import mitt from 'mitt'
 import {ref} from 'vue'
-let count = ref(0)
+import $bus from '../bus'
 
-const $emit = mitt()
-$emit.emit('count',count)
+let count = ref(23)
+const handleClick = () => {
+  count.value ++
+  $bus.emit('add',count.value)
+}
 </script>
 <style lang="scss" scoped>
 </style>

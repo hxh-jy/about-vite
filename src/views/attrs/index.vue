@@ -12,6 +12,7 @@ import {ref} from 'vue'
 
 import AttrsChild from '@/components/attrs-child.vue'
 import AttrsGrandSon from '@/components/attrs-grandson.vue'
+import $bus from '../../bus'
 
 let count = ref(0)
 let son = ref(0)

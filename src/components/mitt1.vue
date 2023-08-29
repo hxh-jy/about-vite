@@ -4,7 +4,7 @@
 </template>
 
 <script setup lang='ts'>
-import {ref} from 'vue'
+import {ref,onMounted} from 'vue'
 import $bus from '../bus'
 
 let count = ref(23)
@@ -12,6 +12,9 @@ const handleClick = () => {
   count.value ++
   $bus.emit('add',count.value)
 }
+onMounted(() => {
+  $bus.emit('add',count.value)
+})
 </script>
 <style lang="scss" scoped>
 </style>

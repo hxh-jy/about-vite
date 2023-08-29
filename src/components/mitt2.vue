@@ -3,16 +3,14 @@
 </template>
 
 <script setup lang='ts'>
-import {onMounted,ref} from 'vue'
+import {onMounted,ref,onBeforeMount} from 'vue'
 import $bus from '../bus'
-let count = ref(0)
-onMounted(() => {
-    $bus.on('add',(e) => {
-        count.value = e
-        console.log('获取单个事件总线',e)
+let count = ref()
+onBeforeMount(() => {
+    $bus.on('add',(data) => {
+        count.value = data
     })
 })
-console.log($bus)
 </script>
 <style lang="scss" scoped>
 </style>

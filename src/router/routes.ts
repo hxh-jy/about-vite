@@ -23,5 +23,9 @@ const routes = [
         path:'/provide',
         component: () => import("@/views/provide/index.vue")
     },
+    {
+        path:'/pinia',
+        component: () => import("@/views/pinia/index.vue")
+    },
 ]
 export default routes

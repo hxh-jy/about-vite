@@ -1,6 +1,6 @@
 <template>
   <div>
-      接受子组件
+      接受子组件 pinia中count的值: {{store.counter}}
       <RefSon ref="son"/>
       <br/>
 
@@ -15,6 +15,9 @@
 import {onMounted,ref,defineExpose,reactive} from 'vue'
 import RefSon from '@/components/ref-son.vue'
 import RefGetparent from '@/components/ref-getparent.vue'
+
+import useStore from '../../store/store'
+let store = useStore()
 /**
  * 定义属性
  */
@@ -48,7 +51,7 @@ defineExpose({
  * 生命周期函数
  */
 onMounted(() => {
-  console.log('测试ref属性',son.value.age)  
+  console.log('测试ref属性',store,son.value.age)  
 })
 </script>
 <style lang="scss" scoped>

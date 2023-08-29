@@ -11,5 +11,17 @@ const routes = [
         path:'/mitt',
         component: () => import("@/views/mitt/index.vue")
     },
+    {
+        path:'/custom',
+        component: () => import("@/views/custom-event/index.vue")
+    },
+    {
+        path:'/ref',
+        component: () => import("@/views/ref/index.vue")
+    },
+    {
+        path:'/provide',
+        component: () => import("@/views/provide/index.vue")
+    },
 ]
 export default routes
